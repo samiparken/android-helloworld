@@ -14,10 +14,12 @@ class MainActivity : AppCompatActivity() {
         // get reference to button
         val btn_click_me = findViewById(R.id.button) as Button
         var myTextView = findViewById(R.id.textView) as TextView
+        var timesClicked = 0
 
         // set on-click listener
         btn_click_me.setOnClickListener {
-            myTextView.text = "Test"
+            timesClicked += 1
+            myTextView.text = timesClicked.toString()
             Toast.makeText(this@MainActivity, "You clicked me.", Toast.LENGTH_SHORT).show()
         }
     }
