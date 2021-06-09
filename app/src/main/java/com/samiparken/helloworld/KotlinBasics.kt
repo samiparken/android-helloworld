@@ -28,7 +28,7 @@ fun main() {
 
     /* Strings */
     val myStr = "HEEEELLLLOOO"
-    val firstChar = myStr[0] // accessable with array
+    val firstChar = myStr[0] // accessible with array
     val lastChar = myStr[myStr.length - 1]
 
     /* Arithmetic operators (+, -, *, /, %) */
@@ -135,4 +135,54 @@ fun main() {
         print("$num4")
     }
 
+    /* FUNCTIONS */
+    // Method - a Method is a function within a class
+    // Parameters VS arguments
+
+    myFunction()
+    val result2: Int = addUp(1,2) //arguments
+    val result3 = avg(10.9,20.4)
+
+    /* Nullable */
+    var name2: String = "Han-Saem"
+    var nullableName: String? = "Han-Saem"
+    //nullableName = null
+
+    var len = name2.length
+    var len2 = nullableName?.length //the same as below
+    /*
+    if (nullableName != null) {
+        len2 = nullableName.length
+    } else {
+        null
+    }
+    */
+    println(nullableName?.lowercase())
+    nullableName?.let {println(it.length)}
+
+    // ?: Elvis operator
+    var name3 = nullableName ?: "Guest"
+    println("name is $name3")
+
+    println(nullableName!!.lowercase())  // null exception if nullableName is null
+
+    //example
+//    val wifesAge: String? = user?.wife?.age ?: 0
+
+
 }
+
+fun myFunction() {
+    print("\nCalled from myFunction\n")
+}
+
+fun addUp(a: Int, b: Int) : Int { //parameters
+    return a + b
+}
+
+fun avg(a: Double, b: Double) : Double {
+    return (a+b)/2
+}
+
+
+
