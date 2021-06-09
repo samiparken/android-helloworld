@@ -169,6 +169,12 @@ fun main() {
     //example
 //    val wifesAge: String? = user?.wife?.age ?: 0
 
+    /* CLASS */
+    var person1 = Person("Han-Saem", "Park")
+    var john = Person()
+    var johnPeterson = Person(lastName = "Peterson")
+
+
 
 }
 
@@ -184,5 +190,19 @@ fun avg(a: Double, b: Double) : Double {
     return (a+b)/2
 }
 
+// it's possible to declare a variable with the same name as the parameter
+// it's called Shadowing
+fun myFunction(a:Int) {
+    var a = a
+}
 
+/* CLASS */
+class Person (firstName: String = "John", lastName: String = "Doe") {
+    init {
+        println("\nPerson created")
+        println("Initialized a new person object with " +
+        "firstName = $firstName and lastName = $lastName")
+    }
+
+}
 
